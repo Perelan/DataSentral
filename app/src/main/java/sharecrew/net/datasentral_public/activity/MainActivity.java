@@ -1,8 +1,9 @@
-package sharecrew.net.datasentral_public;
+package sharecrew.net.datasentral_public.activity;
 
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -11,7 +12,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import sharecrew.net.datasentral_public.R;
+import sharecrew.net.datasentral_public.fragment.ServiceFragment;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ServiceFragment.OnFragmentInteractionListener {
 
     private final String TAG = "*** MAINACTIVITY";
     @Override
@@ -41,11 +45,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
     @Override
      public void onClick(View v) {
+
+        Fragment fragment = null;
+
         switch (v.getId()){
             case R.id.tile1:
                 Log.v(TAG, "Button Clicked: Service");
+                fragment = new ServiceFragment();
                 break;
             case R.id.tile2:
                 Log.v(TAG, "Button Clicked: Register");
@@ -63,6 +72,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.v(TAG, "Button Clicked: Contact");
                 break;
         }
+
+        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
+        ft.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.fade_in);
+        ft.replace(R.id.fragment, fragment);
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
     @Override
@@ -85,5 +101,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
