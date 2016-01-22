@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     tools:context="sharecrew.net.datasentral_public.activity.MainActivity"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/colorAccent">
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"

@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         voucher.setOnClickListener(this);
         about.setOnClickListener(this);
         contact.setOnClickListener(this);
-
     }
 
 

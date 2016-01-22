@@ -5,27 +5,26 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:layout_margin="5dp"
-    app:cardBackgroundColor="@android:color/transparent"
     app:cardCornerRadius="3dp"
     app:cardElevation="0dp">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp">
+        android:layout_height="250dp"
+        android:background="@android:color/transparent">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="bottom"
-            android:background="#b9cecece"
             android:paddingBottom="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="TIMEPRIS"
-                android:id="@+id/title"
+                android:text="TITLE"
+                android:id="@+id/service_card_title"
                 android:layout_marginTop="47dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
@@ -35,27 +34,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="PRIS 499,- NOK"
-                android:id="@+id/textView7"
+                android:text="PRICE"
+                android:id="@+id/service_card_price"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="10dp"
                 android:textColor="@color/colorPrimary" />
 
             <TextView
-                android:layout_width="300dp"
+                android:layout_width="3000dp"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Vi tar en fast pris i timen uansett hva du trenger hjelp med."
-                android:id="@+id/textView8"
-                android:layout_above="@+id/textView7"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="30dp" />
+                android:text="Some description goes here"
+                android:id="@+id/service_card_desc"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
 
         </RelativeLayout>
 
         <com.github.siyamed.shapeimageview.CircularImageView
-            android:id="@+id/imageProfile"
+            android:id="@+id/service_card_icon"
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"

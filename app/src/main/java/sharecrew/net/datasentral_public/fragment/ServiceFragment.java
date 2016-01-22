@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import sharecrew.net.datasentral_public.R;
+import sharecrew.net.datasentral_public.ServiceObject;
 import sharecrew.net.datasentral_public.adapter.ServiceAdapter;
 
 public class ServiceFragment extends Fragment {
@@ -26,7 +27,7 @@ public class ServiceFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private RecyclerView mRecView;
-    private ArrayList<String> mList;
+    private ArrayList<ServiceObject> mList;
     private ServiceAdapter mAdapter;
     private ActionBar mActionBar;
 
@@ -50,12 +51,9 @@ public class ServiceFragment extends Fragment {
         mList = new ArrayList<>();
     }
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_service, container, false);
 
         mRecView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
@@ -65,23 +63,10 @@ public class ServiceFragment extends Fragment {
         glm.setOrientation(GridLayoutManager.VERTICAL);
         mRecView.setLayoutManager(glm);
 
-        mList.add("Timepris");
-        mList.add("Helgepris");
-        mList.add("Fjern Virus");
-        mList.add("Reinstallasjon");
-        mList.add("Trådløst Nettverk");
-        mList.add("Web Utvikling");
-        mList.add("App Utvikling");
-        mList.add("Oppsett av Printer");
-        mList.add("Opplæring");
-        mList.add("PC Sjekk");
-        mList.add("Fjernhjelp");
-        mList.add("Firma Avtale");
-        mList.add("Gammel Til Ny");
-        mList.add("Låne Utstyr");
-        mList.add("Data Håndtering");
+        mList.add(new ServiceObject("Timepris", "Vi tar en fast pris i timen uansett hva du trenger hjelp med.", "595", R.drawable.hour));
+        mList.add(new ServiceObject("Helge Pris", "Krevende å dra ut om helgen derfor tar vi litt mer.", "749", R.drawable.info));
 
-        mAdapter = new ServiceAdapter(mList);
+        mAdapter = new ServiceAdapter(mList, getActivity(), getResources());
         mRecView.setAdapter(mAdapter);
 
         return rootView;
