@@ -14,8 +14,8 @@
         android:background="@color/colorPrimary">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:id="@+id/service_box_icon"
             android:src="@drawable/hour"
             android:layout_alignParentTop="true"
@@ -29,9 +29,10 @@
             android:id="@+id/service_box_title"
             android:layout_below="@+id/service_box_icon"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
-            android:textColor="#FFF" />
+            android:textColor="#FFF"
+            android:textSize="12sp" />
 
     </RelativeLayout>
 

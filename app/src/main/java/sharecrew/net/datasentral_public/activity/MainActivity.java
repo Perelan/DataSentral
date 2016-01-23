@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 
 import sharecrew.net.datasentral_public.R;
+import sharecrew.net.datasentral_public.fragment.ContactFragment;
 import sharecrew.net.datasentral_public.fragment.ServiceFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, ServiceFragment.OnFragmentInteractionListener {
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tile6:
                 Log.v(TAG, "Button Clicked: Contact");
+                fragment = new ContactFragment();
                 break;
         }
 
