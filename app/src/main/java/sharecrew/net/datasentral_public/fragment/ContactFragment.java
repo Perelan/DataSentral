@@ -62,7 +62,6 @@ public class ContactFragment extends Fragment {
     }
 
     public class PagerAdapter extends FragmentStatePagerAdapter {
-        SparseArray<Fragment> registeredFragments = new SparseArray<Fragment>();
 
         public PagerAdapter(FragmentManager fm) {
             super(fm);
@@ -84,50 +83,6 @@ public class ContactFragment extends Fragment {
         @Override
         public int getCount() {
             return 2;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return "Page " + (position + 1);
-        }
-
-        /**
-         * On each Fragment instantiation we are saving the reference of that Fragment in a Map
-         * It will help us to retrieve the Fragment by position
-         *
-         * @param container
-         * @param position
-         * @return
-         */
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            Fragment fragment = (Fragment) super.instantiateItem(container, position);
-            registeredFragments.put(position, fragment);
-            return fragment;
-        }
-
-        /**
-         * Remove the saved reference from our Map on the Fragment destroy
-         *
-         * @param container
-         * @param position
-         * @param object
-         */
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            registeredFragments.remove(position);
-            super.destroyItem(container, position, object);
-        }
-
-
-        /**
-         * Get the Fragment by position
-         *
-         * @param position tab position of the fragment
-         * @return
-         */
-        public Fragment getRegisteredFragment(int position) {
-            return registeredFragments.get(position);
         }
     }
 }

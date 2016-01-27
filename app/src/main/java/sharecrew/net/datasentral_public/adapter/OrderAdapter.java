@@ -17,13 +17,13 @@ import sharecrew.net.datasentral_public.R;
 import sharecrew.net.datasentral_public.ServiceObject;
 import sharecrew.net.datasentral_public.fragment.ServiceDialogFragment;
 
-public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHolder>{
+public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
     private final String TAG = "******* Service Adapter";
     private ArrayList<ServiceObject> mDataset;
     private Context mContext;
     private Resources mResources;
 
-    public ServiceAdapter(ArrayList<ServiceObject> mDataset, Context mContext, Resources mResources) {
+    public OrderAdapter(ArrayList<ServiceObject> mDataset, Context mContext, Resources mResources) {
         this.mDataset   = mDataset;
         this.mContext   = mContext;
         this.mResources = mResources;

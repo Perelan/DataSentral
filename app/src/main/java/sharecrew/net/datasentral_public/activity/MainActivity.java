@@ -11,9 +11,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import sharecrew.net.datasentral_public.R;
 import sharecrew.net.datasentral_public.fragment.ContactFragment;
+import sharecrew.net.datasentral_public.fragment.OrderFragment;
 import sharecrew.net.datasentral_public.fragment.ServiceFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, ServiceFragment.OnFragmentInteractionListener {
@@ -58,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tile2:
                 Log.v(TAG, "Button Clicked: Register");
+                Toast.makeText(getApplicationContext(), "Trykk på en av rutene for å bestille!", Toast.LENGTH_LONG).show();
+                fragment = new OrderFragment();
                 break;
             case R.id.tile3:
                 Log.v(TAG, "Button Clicked: Status");
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
-        ft.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.fade_in);
+        ft.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.fade_in, android.R.anim.fade_out, android.R.anim.slide_out_right);
         ft.replace(R.id.fragment, fragment);
         ft.addToBackStack(null);
         ft.commit();
