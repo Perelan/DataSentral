@@ -1,0 +1,214 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:layout_margin="5dp"
+    app:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="#86281c">
+
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:id="@+id/order_card_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/hour"
+            app:siBorderColor="@color/colorAccent"
+            app:siBorderWidth="1dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="title"
+            android:id="@+id/order_card_title"
+            android:layout_below="@+id/order_card_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="PRICE"
+            android:id="@+id/order_card_price"
+            android:textColor="@color/colorPrimary"
+            android:layout_below="@+id/order_card_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/order_card_price">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="navn*"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@+id/imageButton"
+                    android:layout_toEndOf="@+id/imageButton"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:textColorHighlight="#FFF"
+                    android:textColorHint="#FFF"
+                    android:textColorLink="#FFF" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="email*"
+                    android:inputType="textEmailAddress"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:textColorHighlight="#FFF"
+                    android:textColorHint="#FFF"
+                    android:textColorLink="#FFF"
+                    android:layout_below="@+id/name"
+                    android:layout_alignLeft="@+id/name"
+                    android:layout_alignStart="@+id/name"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="telefon"
+                    android:inputType="phone"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:textColorHighlight="#FFF"
+                    android:textColorHint="#FFF"
+                    android:textColorLink="#FFF"
+                    android:layout_below="@+id/imageButton2"
+                    android:layout_alignLeft="@+id/email"
+                    android:layout_alignStart="@+id/email"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp" />
+
+                <EditText
+                    android:id="@+id/adresse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="adresse *"
+                    android:inputType="textEmailAddress"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:textColorHighlight="#FFF"
+                    android:textColorHint="#FFF"
+                    android:textColorLink="#FFF"
+                    android:layout_below="@+id/imageButton3"
+                    android:layout_alignLeft="@+id/phone"
+                    android:layout_alignStart="@+id/phone"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp" />
+
+                <EditText
+                    android:id="@+id/message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="beskjed*"
+                    android:inputType="textMultiLine"
+                    android:textSize="16sp"
+                    android:textColor="#FFF"
+                    android:textColorHighlight="#FFF"
+                    android:textColorHint="#FFF"
+                    android:textColorLink="#FFF"
+                    android:layout_below="@+id/adresse"
+                    android:layout_alignLeft="@+id/adresse"
+                    android:layout_alignStart="@+id/adresse"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="SEND"
+                    android:background="@color/colorPrimary"
+                    android:id="@+id/button_tab1"
+                    android:textColor="#FFF"
+                    android:layout_below="@+id/message"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="35dp"
+                    android:layout_marginTop="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton"
+                    android:layout_alignBottom="@+id/name"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/name"
+                    android:layout_marginLeft="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton2"
+                    android:src="@drawable/email_small"
+                    android:layout_alignBottom="@+id/email"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton3"
+                    android:src="@drawable/phone_small"
+                    android:layout_alignTop="@+id/phone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton4"
+                    android:src="@drawable/message"
+                    android:layout_alignTop="@+id/message"
+                    android:layout_alignLeft="@+id/imageButton3"
+                    android:layout_alignStart="@+id/imageButton3"
+                    android:layout_marginTop="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton5"
+                    android:src="@drawable/message"
+                    android:layout_above="@+id/message"
+                    android:layout_alignLeft="@+id/imageButton3"
+                    android:layout_alignStart="@+id/imageButton3" />
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

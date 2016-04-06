@@ -1,8 +1,8 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="sharecrew.net.datasentral_public.fragment.ContactTab2Fragment"
+    tools:context=".fragment.contact.ContactTab2Fragment"
     android:background="@color/colorAccent"
     android:clickable="true">
 
@@ -12,4 +12,4 @@
         android:layout_height="wrap_content"
         android:text="FROM REGISTER PHONE"
         android:layout_gravity="center_horizontal|top" />
-</FrameLayout>
+</RelativeLayout>

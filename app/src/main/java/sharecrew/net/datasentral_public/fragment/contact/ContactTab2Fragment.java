@@ -1,4 +1,5 @@
-package sharecrew.net.datasentral_public.fragment;
+package sharecrew.net.datasentral_public.fragment.contact;
+
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,10 +12,10 @@ import sharecrew.net.datasentral_public.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContactTab1Fragment extends Fragment {
+public class ContactTab2Fragment extends Fragment {
 
 
-    public ContactTab1Fragment() {
+    public ContactTab2Fragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +24,7 @@ public class ContactTab1Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact_tab1, container, false);
+        return inflater.inflate(R.layout.fragment_contact_tab2, container, false);
     }
 
 }

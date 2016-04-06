@@ -15,7 +15,8 @@ import java.util.ArrayList;
 
 import sharecrew.net.datasentral_public.R;
 import sharecrew.net.datasentral_public.ServiceObject;
-import sharecrew.net.datasentral_public.fragment.ServiceDialogFragment;
+import sharecrew.net.datasentral_public.fragment.order.OrderDialogFragment;
+import sharecrew.net.datasentral_public.fragment.service.ServiceDialogFragment;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
     private final String TAG = "******* Service Adapter";
@@ -40,7 +41,6 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
         holder.title.setText(mDataset.get(position).getTitle());
         holder.icon.setImageResource(mResources.getIdentifier(Integer.toString(mDataset.get(position).getIcon()), "drawable", "net.sharecrew.datasentral_public"));
     }
-
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
@@ -76,7 +76,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder>{
             String price = "PRIS " + mDataset.get(this.getAdapterPosition()).getPrice() + ",- NOK";
             int icon  = mDataset.get(this.getAdapterPosition()).getIcon();
 
-            ServiceDialogFragment alertDialog = ServiceDialogFragment.newInstance(title, desc, price, icon);
+            OrderDialogFragment alertDialog = OrderDialogFragment.newInstance(title, price, icon);
             alertDialog.show(fm, "display_service");
         }
     }

@@ -278,7 +278,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Kontakt Oss"
+                        android:text="Kontakt"
                         android:id="@+id/textView6"
                         android:layout_gravity="center_horizontal|bottom"
                         android:textStyle="bold"

@@ -3,7 +3,6 @@ package sharecrew.net.datasentral_public.activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -14,9 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import sharecrew.net.datasentral_public.R;
-import sharecrew.net.datasentral_public.fragment.ContactFragment;
-import sharecrew.net.datasentral_public.fragment.OrderFragment;
-import sharecrew.net.datasentral_public.fragment.ServiceFragment;
+import sharecrew.net.datasentral_public.fragment.contact.ContactFragment;
+import sharecrew.net.datasentral_public.fragment.order.OrderFragment;
+import sharecrew.net.datasentral_public.fragment.service.ServiceFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, ServiceFragment.OnFragmentInteractionListener {
 
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tile2:
                 Log.v(TAG, "Button Clicked: Register");
-                Toast.makeText(getApplicationContext(), "Trykk på en av rutene for å bestille!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Trykk på en av rutene for å bestille!", Toast.LENGTH_SHORT).show();
                 fragment = new OrderFragment();
                 break;
             case R.id.tile3:

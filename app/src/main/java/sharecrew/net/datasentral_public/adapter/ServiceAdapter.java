@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 import sharecrew.net.datasentral_public.R;
 import sharecrew.net.datasentral_public.ServiceObject;
-import sharecrew.net.datasentral_public.fragment.ServiceDialogFragment;
+import sharecrew.net.datasentral_public.fragment.service.ServiceDialogFragment;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ViewHolder>{
     private final String TAG = "******* Service Adapter";
