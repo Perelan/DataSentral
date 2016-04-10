@@ -10,6 +10,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,7 @@ import sharecrew.net.datasentral_public.R;
 public class ContactFragment extends Fragment {
 
     private ViewPager viewPager;
+    private ActionBar mActionBar;
 
     @Nullable
     @Override
@@ -27,11 +30,12 @@ public class ContactFragment extends Fragment {
 
         final View v = inflater.inflate(R.layout.fragment_contact, container, false);
 
+        mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        mActionBar.setTitle("Kontakt");
+
         TabLayout tabLayout = (TabLayout) v.findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("Kontakt oss"));
         tabLayout.addTab(tabLayout.newTab().setText("Kontakt meg"));
-
-
 
         viewPager = (ViewPager) v.findViewById(R.id.pager);
         viewPager.setAdapter(new PagerAdapter(getChildFragmentManager()));
@@ -40,16 +44,14 @@ public class ContactFragment extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
-                if(tab.getPosition() == 1){
-                    Snackbar.make(v.findViewById(R.id.main_layout), "Fyll in navn og telefon, og vi kontakter deg!", Snackbar.LENGTH_LONG)
-                            .setAction("Forkast", new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                }
-                            })
-                            .setActionTextColor(Color.RED)
-                            .show();
+
+                if (tab.getPosition() == 0) {
                 }
+
+                if (tab.getPosition() == 1) {
+
+                }
+
             }
 
             @Override

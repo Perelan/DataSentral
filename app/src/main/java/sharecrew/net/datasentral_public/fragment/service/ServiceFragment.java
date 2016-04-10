@@ -32,8 +32,7 @@ public class ServiceFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
-        mActionBar.setIcon(R.drawable.suitcase_small);
-        mActionBar.setTitle(" Tjenester");
+        mActionBar.setTitle("Tjenester");
 
         mList = new ArrayList<>();
     }
@@ -79,8 +78,6 @@ public class ServiceFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
-        mActionBar.setIcon(R.drawable.home);
-        mActionBar.setTitle(" Hjem");
     }
 
     /**

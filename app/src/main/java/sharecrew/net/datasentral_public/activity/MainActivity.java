@@ -3,6 +3,7 @@ package sharecrew.net.datasentral_public.activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import sharecrew.net.datasentral_public.R;
+import sharecrew.net.datasentral_public.fragment.CouponFragment;
 import sharecrew.net.datasentral_public.fragment.contact.ContactFragment;
 import sharecrew.net.datasentral_public.fragment.order.OrderFragment;
 import sharecrew.net.datasentral_public.fragment.service.ServiceFragment;
@@ -20,16 +22,28 @@ import sharecrew.net.datasentral_public.fragment.service.ServiceFragment;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, ServiceFragment.OnFragmentInteractionListener {
 
     private final String TAG = "*** MAINACTIVITY";
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        toolbar.setTitle(" Hjem");
-        toolbar.setLogo(R.drawable.home);
-
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Hjem");
         setSupportActionBar(toolbar);
+
+        getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                int stackHeight = getSupportFragmentManager().getBackStackEntryCount();
+                if (stackHeight > 0) { // if we have something on the stack (doesn't include the current shown fragment)
+                    getSupportActionBar().setHomeButtonEnabled(true);
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                } else {
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                    getSupportActionBar().setHomeButtonEnabled(false);
+                }
+            }
+        });
 
         ViewGroup service   = (ViewGroup) findViewById(R.id.tile1);
         ViewGroup register  = (ViewGroup) findViewById(R.id.tile2);
@@ -46,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         contact.setOnClickListener(this);
     }
 
-
     @Override
      public void onClick(View v) {
 
@@ -59,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tile2:
                 Log.v(TAG, "Button Clicked: Register");
-                Toast.makeText(getApplicationContext(), "Trykk på en av rutene for å bestille!", Toast.LENGTH_SHORT).show();
                 fragment = new OrderFragment();
                 break;
             case R.id.tile3:
@@ -67,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tile4:
                 Log.v(TAG, "Button Clicked: Voucher");
+                fragment = new CouponFragment();
                 break;
             case R.id.tile5:
                 Log.v(TAG, "Button Clicked: About");
@@ -86,6 +99,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        toolbar.setTitle("Hjem");
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -101,6 +120,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        } else if(id == android.R.id.home) {
+            toolbar.setTitle("Hjem");
+            getSupportFragmentManager().popBackStack();
             return true;
         }
 

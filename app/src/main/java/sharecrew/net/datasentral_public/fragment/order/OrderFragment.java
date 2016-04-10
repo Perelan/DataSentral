@@ -3,6 +3,8 @@ package sharecrew.net.datasentral_public.fragment.order;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -22,21 +24,23 @@ public class OrderFragment extends Fragment {
     private RecyclerView mRecView;
     private ArrayList<ServiceObject> mList;
     private OrderAdapter mAdapter;
-
+    private ActionBar mActionBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mList = new ArrayList<>();
+        mActionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        mActionBar.setTitle("Registrer");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_service_list, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_order, container, false);
 
-        mRecView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
+        mRecView = (RecyclerView) rootView.findViewById(R.id.recycler_order);
         mRecView.setHasFixedSize(true);
 
         GridLayoutManager glm = new GridLayoutManager(getContext(), 3);

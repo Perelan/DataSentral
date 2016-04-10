@@ -5,142 +5,229 @@
     android:layout_gravity="center"
     android:id="@+id/view"
     android:clickable="true"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorAccent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context=".fragment.contact.ContactTab1Fragment">
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_tab1"
+        android:id="@+id/scrollView">
 
-        <android.support.v7.widget.CardView
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#dcdcdc"
-            android:padding="5dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Navn *"
+                android:id="@+id/navn_id"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/navn_layout"
+                android:layout_alignStart="@+id/navn_layout"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPrimary" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:id="@+id/navn_layout"
+                android:layout_below="@+id/navn_id"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="30dp">
 
                 <EditText
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:hint="navn*"
-                    android:singleLine="true"
-                    android:layout_toRightOf="@+id/imageButton"
-                    android:layout_toEndOf="@+id/imageButton"
+                    android:hint="Ola Nordmann"
+                    android:background="@android:color/transparent"
+                    android:inputType="textPersonName"
+                    android:textSize="16sp"
+                    android:layout_toRightOf="@+id/name_id"
+                    android:layout_toEndOf="@+id/name_id"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="16sp" />
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/name_id"
+                    android:src="@drawable/name"
+                    android:layout_alignBottom="@+id/name"
+                    android:layout_alignTop="@+id/name"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="10dp" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Email *"
+                android:id="@+id/email_id"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@+id/navn_layout"
+                android:layout_alignLeft="@+id/navn_layout"
+                android:layout_alignStart="@+id/navn_layout"
+                android:layout_marginTop="15dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:id="@+id/email_layout"
+                android:layout_below="@+id/email_id"
+                android:layout_alignLeft="@+id/email_id"
+                android:layout_alignStart="@+id/email_id"
+                android:layout_marginTop="5dp"
+                android:layout_alignRight="@+id/navn_layout"
+                android:layout_alignEnd="@+id/navn_layout">
 
                 <EditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/name"
-                    android:hint="email*"
+                    android:hint="ola@normann.no"
+                    android:background="@android:color/transparent"
                     android:inputType="textEmailAddress"
-                    android:layout_toRightOf="@+id/imageButton2"
-                    android:layout_toEndOf="@+id/imageButton2"
+                    android:textSize="16sp"
+                    android:layout_toRightOf="@+id/imageView7"
+                    android:layout_toEndOf="@+id/imageView7"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/phone"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/email"
-                    android:hint="telefon"
-                    android:inputType="phone"
-                    android:layout_toRightOf="@+id/imageButton3"
-                    android:layout_toEndOf="@+id/imageButton3"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="16sp" />
-
-                <EditText
-                    android:id="@+id/message"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:hint="beskjed*"
-                    android:inputType="textMultiLine"
-                    android:layout_marginBottom="15dp"
-                    android:layout_below="@+id/phone"
-                    android:layout_toRightOf="@+id/imageButton4"
-                    android:layout_toEndOf="@+id/imageButton4"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:textSize="16sp" />
-
-                <Button
-                    style="?android:attr/buttonStyleSmall"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="SEND"
-                    android:background="@color/colorPrimary"
-                    android:id="@+id/button_tab1"
-                    android:layout_below="@+id/message"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="#FFF" />
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageButton"
-                    android:layout_alignBottom="@+id/name"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:src="@drawable/name"
-                    android:layout_marginLeft="10dp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/imageView7"
                     android:src="@drawable/email_small"
                     android:layout_alignBottom="@+id/email"
+                    android:layout_alignTop="@+id/email"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp" />
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Telefon"
+                android:id="@+id/tlf_id"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@+id/email_layout"
+                android:layout_alignLeft="@+id/tlf_layout"
+                android:layout_alignStart="@+id/tlf_layout"
+                android:layout_marginTop="15dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:id="@+id/tlf_layout"
+                android:layout_below="@+id/tlf_id"
+                android:layout_alignLeft="@+id/email_layout"
+                android:layout_alignStart="@+id/email_layout"
+                android:layout_alignRight="@+id/email_layout"
+                android:layout_alignEnd="@+id/email_layout"
+                android:layout_marginTop="5dp">
+
+                <EditText
+                    android:id="@+id/tlf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="+47 98 15 9000"
+                    android:background="@android:color/transparent"
+                    android:inputType="number"
+                    android:textSize="16sp"
+                    android:layout_toRightOf="@+id/imageView8"
+                    android:layout_toEndOf="@+id/imageView8"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentTop="true" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/imageView8"
                     android:src="@drawable/phone_small"
-                    android:layout_alignTop="@+id/phone"
+                    android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/imageButton4"
-                    android:src="@drawable/message"
-                    android:layout_alignTop="@+id/message"
-                    android:layout_alignLeft="@+id/imageButton3"
-                    android:layout_alignStart="@+id/imageButton3"
-                    android:layout_marginTop="10dp" />
+                    android:layout_marginLeft="10dp" />
             </RelativeLayout>
-        </android.support.v7.widget.CardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Beskjed *"
+                android:id="@+id/txt_id"
+                android:textColor="@color/colorPrimary"
+                android:layout_below="@+id/tlf_layout"
+                android:layout_alignLeft="@+id/tlf_layout"
+                android:layout_alignStart="@+id/tlf_layout"
+                android:layout_marginTop="15dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#fff"
+                android:id="@+id/txt_layout"
+                android:layout_below="@+id/txt_id"
+                android:layout_alignLeft="@+id/tlf_layout"
+                android:layout_alignStart="@+id/tlf_layout"
+                android:layout_alignRight="@+id/tlf_layout"
+                android:layout_alignEnd="@+id/tlf_layout"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp">
+
+                <EditText
+                    android:id="@+id/txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Hei, jeg ønsker hjelp med..."
+                    android:background="@android:color/transparent"
+                    android:inputType="textMultiLine"
+                    android:textSize="16sp"
+
+                    android:maxLines="10"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
     </ScrollView>
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND"
+        android:background="@color/colorPrimary"
+        android:id="@+id/button_tab1"
+        android:textColor="#FFF"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
 
 
